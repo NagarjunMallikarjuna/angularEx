@@ -1,0 +1,22 @@
+we can chain the angular and module called 'method chaining'. 
+If errors are raised. to see error use browser developer tools
+binding expressions in the view that are in the scope of the controller will not be evaluated
+ng-src="" -->primarily used for binding the img 
+Two way binding : keeps the model and view in sync at all times. 
+ng-model can be used with input, select, textarea
+ng-repeat is similiar to foreach loop in C#
+ng-repeat contains $parent and $index to display the index in the list
+events can be handled by ng-click option 
+Filters: can do format, sort and filter data, It can be used with a binding expression or a directive\
+limitTo: is used to filter the table rows 
+lowercase:
+uppercase: 
+number:
+currency:
+orderBy:
+ng-init directive allows you to evaluate an expression in the current scope
+In real world application you should use a controller instead of ng-init to initialize values on the scope
+ng-init should only be used for aliasing special properties of ng-repeat directive
+ng-include directive is used to embed an HTMl page into another HTMl page
+This technique is very useful when you want to reuse a specific view in multiple pages in your application
+

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="inputExample">
+<head>
+<meta charset="ISO-8859-1">
+<title>Angular Input Validation</title>
+<script type="text/javascript" src="../../assets/lib/angular.min.js"></script>
+<script type="text/javascript" src="input.js"></script>
+</head>
+<body>
+	<div ng-controller="inputController">
+		<form name="myForm">
+			<label> User Name: <input type="text" name="userName"
+				ng-model="user.name" ng-required="String"></input>
+			</label>
+			<div role="alert">
+				<span class="error" ng-show="myForm.userName.$error.required">Required!</span>
+			</div>
+
+			<label> Last Name: <input type="text" name="lastName"
+				ng-model="user.last" ng-required="String" ng-minlength="3"
+				ng-maxlength="10"></input>
+			</label>
+			<div role="alert">
+				<span class="error" ng-show="myForm.lastName.$error.minlength">Too
+					Short!</span> <span class="error"
+					ng-show="myForm.lastName.$error.maxlength">Too Long!</span>
+			</div>
+		</form>
+		<hr>
+		<tt>user: {{user}}</tt>
+		<br />
+		<tt>myForm.userName.$valid = {{myForm.userName.$valid}}</tt>
+		<br />
+		<tt>myForm.userName.$error = {{myForm.userName.$error}}</tt>
+		<br />
+		<tt>myForm.lastName.$valid = {{myForm.lastName.$valid}}</tt>
+		<br />
+		<tt>myForm.lastName.$error = {{myForm.lastName.$error}}</tt>
+		<br />
+		<tt>myForm.$valid={{myForm.$valid}}</tt>
+		<br />
+		<tt>myForm.$error.required = {{!!myForm.$error.required}}</tt>
+		<br />
+		<tt>myForm.$error.minlength = {{!!myForm.$error.minlength}}</tt>
+		<br />
+		<tt>myForm.$error.maxlength = {{!!myForm.$error.maxlength}}</tt>
+		<br />
+	</div>
+	<!-- input checkbox -->
+	<div ng-controller="checkboxController">
+		<form name="chkbox">
+			<label> Value1: <input type="checkbox"
+				ng-model="checkboxModel.value1" />
+			</label><br /> <label> Value2: <input type="checkbox"
+				ng-model="checkboxModel.value2" ng-true-value="'YES'"
+				ng-false-value="'NO'" />
+			</label><br />
+		</form>
+		<pre>value1 = {{checkboxModel.value1}}</pre><br/>
+		<pre>value2 = {{checkboxModel.value2}}</pre><br/>
+	</div>
+</body>
+</html>

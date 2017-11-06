@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="equalsExample">
+<head>
+<meta charset="ISO-8859-1">
+<title>Angular Equals</title>
+<script type="text/javascript" src="../../assets/lib/angular.min.js"></script>
+<script type="text/javascript" src="equals.js"></script>
+</head>
+<body>
+	<div ng-controller="equalsController">
+		<form novalidate="novalidate">
+			<h3>User 1</h3>
+			Name: <input type="text" ng-model="user1.name"/>
+			Age: <input type="text" ng-model="user1.age"/>
+			
+			<h3>User 2</h3>
+			Name: <input type="text" ng-model="user2.name"/>
+			Age: <input type="text" ng-model="user2.age"/>
+			
+			<div>
+				<br/>
+				<input type="button" value="Compare" ng-click="compare()"/>
+			</div>
+			
+			User 1<pre>{{user1 | json}}</pre>
+			User 2<pre>{{user2 | json}}</pre>
+			Equal:<pre>{{result}}</pre>
+		</form>
+	</div>
+</body>
+</html>

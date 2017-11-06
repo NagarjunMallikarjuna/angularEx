@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="ngBindExample">
+<head>
+<meta charset="ISO-8859-1">
+<title>ng-Bind</title>
+<script type="text/javascript" src="../../assets/lib/angular.min.js"></script>
+<script type="text/javascript" src="ngBind.js"></script>
+</head>
+<body>
+	<div ng-controller="ngBindController">
+		<label>Enter Name: <input type="text" ng-model="name"/></label><br/>
+		Hello <span ng-bind="name"></span>
+	</div>
+	
+	<div ng-controller="ngBindHtmlCtrl">
+		<p ng-bind-html="myHtml"></p>
+	</div>
+	
+	<div ng-controller="ngTemplateCtrl">
+		<label>Saluation: <input type="text" ng-model="saluation"/></label><br/>
+		<label>Name: <input type="text" ng-model="name"/></label><br/>
+		<pre ng-bind-template="{{saluation}}{{name}}"></pre>
+	</div>
+	
+	<div ng-controller="ngChangeCtrl">
+		<input type="checkbox" ng-model="confirmed" ng-change="change()" id="ng-change-example1"/>
+		<input type="checkbox" ng-model="confirmed" id="ng-change-example2"/>
+		<label for="ng-change-example2">Confirmed</label><br/>
+		<tt>debug={{confirmed}}</tt>
+		<tt>counter={{counter}}</tt>
+	</div>
+</body>
+</html>
